@@ -47,10 +47,13 @@ class Question extends Component {
   handleSubmit() {
     if (this.state.answer) {
       this.props.onSubmit(this.state.answer);
-      this.setState({ error: false });
+      this.setState({ error: false, answer: '' });
     } else {
       this.setState({ error: true });
     }
+  }
+  componentWillReceiveProps() {
+    this.setState({ answer: '', error: false });
   }
   render() {
     const { classes, question } = this.props;

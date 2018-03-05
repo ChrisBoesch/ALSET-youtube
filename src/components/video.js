@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ALSET_YouTube from '../modules/ALSET-youtube';
+import ALSETYouTube from '../modules/ALSET-youtube';
 import VideoStats from './videoStats';
 
 class Video extends Component {
@@ -77,7 +77,7 @@ class Video extends Component {
 
     return (
       <div style={{ marginTop: '100px', width: '100%', textAlign: 'center' }}>
-        <ALSET_YouTube
+        <ALSETYouTube
           videoId={selectedVideo.videoId}
           id={'0'}
           className={''}

@@ -4,14 +4,13 @@ import YouTube from 'react-youtube';
 
 import Question from './components/question';
 
-class ALSET_YouTube extends Component {
+class ALSETYouTube extends Component {
   constructor() {
     super();
     this.state = {};
   }
 
   render() {
-    const { playCount, pauseCount } = this.state;
     const { containerClassName, question, submitResponse } = this.props;
     const youtubePanel = (
       <YouTube
@@ -41,7 +40,7 @@ class ALSET_YouTube extends Component {
   }
 }
 
-ALSET_YouTube.propTypes = {
+ALSETYouTube.propTypes = {
   videoId: PropTypes.string,
   id: PropTypes.string,
   className: PropTypes.string,
@@ -59,4 +58,4 @@ ALSET_YouTube.propTypes = {
   submitResponse: PropTypes.func,
 };
 
-export default ALSET_YouTube;
+export default ALSETYouTube;

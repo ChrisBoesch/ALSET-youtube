@@ -11,7 +11,7 @@ const styles = theme => ({
     overflowX: 'auto',
   },
   table: {
-    minWidth: 700,
+    minWidth: 400,
   },
 });
 
@@ -49,7 +49,7 @@ class VideoStats extends Component {
       </Paper>
     );
 
-    return <div>{videoStats.length > 0 ? dataTable : ''}</div>;
+    return <div className={className}>{videoStats.length > 0 ? dataTable : ''}</div>;
   }
 }
 
