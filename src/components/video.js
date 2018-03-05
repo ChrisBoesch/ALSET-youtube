@@ -68,8 +68,8 @@ class Video extends Component {
     const { selectedVideo } = this.props;
     const { videoStats } = this.state;
     const opts = {
-      height: '300',
-      width: '600',
+      height: '400',
+      width: '100%',
       playerVars: {
         autoplay: 0,
       },
