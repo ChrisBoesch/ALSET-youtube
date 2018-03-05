@@ -13,7 +13,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 
 import VideoList from './list';
 import Video from './video';
-
+import videos from '../videos';
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -37,7 +37,12 @@ const styles = theme => ({
       display: 'none',
     },
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    ...theme.mixins.toolbar,
+    minHeight: '100vh',
+    marginLeft: '10%',
+    marginRight: '10%',
+  },
   drawerPaper: {
     width: drawerWidth,
     [theme.breakpoints.up('md')]: {
@@ -56,19 +61,18 @@ class Layout extends React.Component {
     super();
     this.state = {
       mobileOpen: false,
-      selectedVideoId: 'Q4VGQPk2Dl8',
-      videos: ['Q4VGQPk2Dl8', 'te6VqldjTT8', '0d3eUlvckTU', '1wAZqipDQ8Y', 'ZzcDY6I_RHk'],
+      selectedVideo: videos[0],
     };
   }
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
   handleSelectVideo = videoId => {
-    this.setState({ selectedVideoId: videoId });
+    this.setState({ selectedVideo: videoId });
   };
   render() {
     const { classes, theme } = this.props;
-    const { videos, selectedVideoId } = this.state;
+    const { selectedVideo } = this.state;
 
     const drawer = (
       <div>
@@ -124,7 +128,7 @@ class Layout extends React.Component {
         </Hidden>
         <main className={classes.content}>
           <div className={classes.toolbar}>
-            <Video videoId={selectedVideoId} />
+            <Video selectedVideo={selectedVideo} />
           </div>
         </main>
       </div>

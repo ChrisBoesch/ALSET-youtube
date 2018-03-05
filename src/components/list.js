@@ -23,6 +23,7 @@ function VideoCard(props) {
       {videos.map((video, index) => {
         return (
           <Card
+            key={index}
             className={classes.card}
             onClick={() => {
               handleSelectVideo(video);
@@ -34,7 +35,7 @@ function VideoCard(props) {
               title="Contemplative Reptile"
             />
             <CardContent>
-              <Typography component="h3"> Video {index + 1}</Typography>
+              <Typography component="h3">{video.title}</Typography>
             </CardContent>
           </Card>
         );
