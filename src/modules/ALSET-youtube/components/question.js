@@ -56,12 +56,12 @@ class Question extends Component {
     const { classes, question } = this.props;
     const { answer, error } = this.state;
     const questionHTML = {
-      __html: `Q. ${question}`,
+      __html: `Q. ${question.replace(/\n/g, '<br />')}`,
     };
 
     const questionPanel = (
       <Paper className={classes.root} elevation={4}>
-        <Typography variant="headline" component="pre" dangerouslySetInnerHTML={questionHTML} />
+        <Typography variant="headline" component="h4" dangerouslySetInnerHTML={questionHTML} />
         <TextField
           id="full-width"
           label="Answer"
