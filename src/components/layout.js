@@ -10,9 +10,8 @@ import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
 import MenuIcon from 'material-ui-icons/Menu';
 
-import VideoList from './list';
-import Video from './video';
-import videos from '../videos';
+import Game from './game';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -38,7 +37,7 @@ const styles = theme => ({
   },
   toolbar: {
     ...theme.mixins.toolbar,
-    minHeight: '100vh',
+    minHeight: '800px',
     marginLeft: '10%',
     marginRight: '10%',
   },
@@ -51,7 +50,8 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
+    marginTop : "100px",
+    marginBottom : "100px"
   },
 });
 
@@ -59,25 +59,22 @@ class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      mobileOpen: false,
-      selectedVideo: videos[0],
+      mobileOpen: false, 
     };
+ 
   }
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
-  handleSelectVideo = videoId => {
-    this.setState({ selectedVideo: videoId });
-  };
+
   render() {
     const { classes, theme } = this.props;
-    const { selectedVideo } = this.state;
 
     const drawer = (
       <div>
         <div className={classes.toolbar} />
         <Divider />
-        <VideoList videos={videos} handleSelectVideo={this.handleSelectVideo} />
+
       </div>
     );
 
@@ -94,7 +91,7 @@ class Layout extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" noWrap>
-              ALSET YouTube
+              ALSET Game
             </Typography>
           </Toolbar>
         </AppBar>
@@ -127,7 +124,7 @@ class Layout extends React.Component {
         </Hidden>
         <main className={classes.content}>
           <div className={classes.toolbar}>
-            <Video selectedVideo={selectedVideo} />
+           <Game />
           </div>
         </main>
       </div>

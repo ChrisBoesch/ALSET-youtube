@@ -19,7 +19,7 @@ function VideoCard(props) {
 
   return (
     <div>
-      {videos.map((video, index) => {
+      {/* {videos.map((video, index) => {
         return (
           <Card
             key={index}
@@ -38,7 +38,7 @@ function VideoCard(props) {
             </CardContent>
           </Card>
         );
-      })}
+      })} */}
     </div>
   );
 }

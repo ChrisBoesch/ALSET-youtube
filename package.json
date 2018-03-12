@@ -1,14 +1,17 @@
 {
-  "name": "jupyter-youtube",
+  "name": "game-sample",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "material-ui": "^1.0.0-beta.35",
     "material-ui-icons": "^1.0.0-beta.35",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
-    "react-youtube": "^7.5.0"
+    "matter-js": "^0.14.0",
+    "mobx": "^3.4.0",
+    "mobx-react": "^4.3.5",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-game-kit": "^1.0.4",
+    "react-scripts": "1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
